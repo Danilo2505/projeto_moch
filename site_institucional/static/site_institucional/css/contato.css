@@ -1,0 +1,30 @@
+#form-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+#form-contact label {
+  margin: 0;
+}
+
+#form-contact input[type="text"],
+#form-contact input[type="email"],
+#form-contact textarea,
+#form-contact button[type="submit"] {
+  border: 1px solid var(--accent-color-1);
+  border-radius: 0.5rem;
+  background-color: transparent;
+  color: var(--accent-color-1);
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+#form-contact input[type="text"]:focus,
+#form-contact input[type="email"]:focus,
+#form-contact textarea:focus,
+#form-contact button[type="submit"]:focus {
+  border-color: var(--accent-color-2);
+  outline: none;
+}
