@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto MoCH</title>
+
+    {% load static %}
+
+    <!-- ----- CSS ----- -->
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/colors.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+    <!-- --- CSS Específico --- -->
+    <link
+      rel="stylesheet"
+      href="{% static 'site_institucional/css/index.css' %}"
+    />
+  </head>
+
+  <!-- ----- Scripts ----- -->
+  <script src="{% static 'js/helpers.js' %}"></script>
+  <script src="{% static 'js/themeManager.js' %}" defer></script>
+  <script src="{% static 'js/scripts.js' %}" defer></script>
+
+  <body>
+    <header id="header-top-bar">
+      <div class="div-top-bar-not-collapsible">
+        <h1>Projeto MoCH</h1>
+
+        <button id="button-menu-toggle">
+          <img
+            class="svg-list"
+            src="{% static 'assets/icons/list.svg' %}"
+            alt="Menu"
+            onload="buscarSvg(this);"
+          />
+          <img
+            class="svg-x-lg"
+            src="{% static 'assets/icons/x-lg.svg' %}"
+            alt="Menu"
+            onload="buscarSvg(this);"
+          />
+        </button>
+      </div>
+      <div class="div-top-bar-collapsible">
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/sobre">Sobre</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main>
+      <section id="section-hero">
+        <div>
+          <!-- https://www.gamicos.com/Solution/index9679.html -->
+          <img
+            src="https://www.gamicos.com/editor/image/20231010/20231010175542_2047.png"
+            alt=""
+          />
+        </div>
+        <div>
+          <h2>MoCH — Monitoramento dos Corpos Hídricos</h2>
+          <a href="/sobre" class="a-learn-more">Saiba mais</a>
+        </div>
+      </section>
+
+      <section id="section-features">
+        <h3>Destaques do Projeto</h3>
+        <div class="div-features-grid">
+          <div class="div-feature-card">
+            <h4>Baixo Custo</h4>
+            <p>Montagem simples e acessível com Arduino ou ESP32.</p>
+          </div>
+          <div class="div-feature-card">
+            <h4>Alertas Automáticos</h4>
+            <p>Notificações via WhatsApp, e-mail e aplicativo móvel.</p>
+          </div>
+          <div class="div-feature-card">
+            <h4>Energia Sustentável</h4>
+            <p>Funcionamento com bateria e painel solar.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="div-footer-container">
+        <div class="div-footer-about">
+          <h3>MoCH</h3>
+          <p>
+            Monitoramento dos Corpos Hídricos — tecnologia acessível para
+            proteger comunidades ribeirinhas e agricultores.
+          </p>
+        </div>
+
+        <div class="div-footer-links">
+          <h4>Links úteis</h4>
+          <ul>
+            <li><a href="/">Início</a></li>
+            <li><a href="/sobre">Sobre o Projeto</a></li>
+            <li><a href="/contato">Contato</a></li>
+          </ul>
+        </div>
+
+        <div class="div-footer-contact">
+          <h4>Contato</h4>
+          <p>EEEP Paulo Barbosa Leite — Caririaçu, CE</p>
+          <p>
+            Email:
+            <a href="mailto:projetomochpbl@gmail.com"
+              >projetomochpbl@gmail.com</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div class="div-footer-bottom">
+        <p>© 2025 MoCH — Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- --- Botão de Tema --- -->
+    <button id="button-tema" aria-label="Mudar tema"></button>
+  </body>
+</html>

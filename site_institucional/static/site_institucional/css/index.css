@@ -1,0 +1,10 @@
+/* ----- Seção Hero ----- */
+#section-hero {
+  display: flex;
+  flex-direction: column;
+}
+
+#section-hero img {
+  width: 100%;
+  border-radius: 1rem;
+}

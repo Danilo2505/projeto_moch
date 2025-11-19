@@ -1,0 +1,293 @@
+/* ----- Variáveis ----- */
+:root {
+  --top-bar-menu-button-size: 2.5rem;
+}
+
+/* ----- Reset ----- */
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scrollbar-width: smooth;
+}
+
+/* ----- Corpo ----- */
+body {
+  background-color: var(--bg-color-1);
+  color: var(--accent-color-1);
+  font-family: system-ui, sans-serif;
+  line-height: 1.5;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+main,
+footer {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+header,
+main {
+  margin-bottom: 1rem;
+}
+
+/* ----- Cabeçalho ----- */
+header {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  background-color: var(--bg-color-2);
+  color: var(--accent-color-1);
+  position: sticky;
+  top: 0;
+}
+
+/* ----- Principal ----- */
+main {
+  max-width: 1000px;
+  align-self: center;
+}
+
+/* ----- Botões ----- */
+button {
+  border: none;
+  padding: 0;
+}
+
+/* ----- Links ----- */
+a {
+  color: var(--accent-color-1);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-color-2);
+}
+
+/* ----- SVG ----- */
+svg {
+  color: inherit;
+  fill: inherit;
+  max-height: 100%;
+  max-width: 100%;
+  flex-grow: 1;
+  height: auto;
+}
+
+/* ----- Top Bar ----- */
+#header-top-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+}
+
+#header-top-bar .div-top-bar-not-collapsible {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+#header-top-bar h1 {
+  /* margin: 1rem 0; */
+  margin: 0;
+}
+
+#header-top-bar .div-top-bar-collapsible {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#button-menu-toggle {
+  background-color: transparent;
+  fill: var(--accent-color-1);
+  border-radius: 100vh;
+  padding: 0.4rem;
+  width: var(--top-bar-menu-button-size);
+  height: var(--top-bar-menu-button-size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* aspect-ratio: 1 / 1; */
+}
+
+/* --- Menu Fechado e Botão de Abrir Menu --- */
+#button-menu-toggle .svg-list {
+  display: block;
+}
+
+#button-menu-toggle .svg-x-lg,
+#header-top-bar .div-top-bar-collapsible {
+  display: none;
+}
+
+/* --- Menu Aberto e Botão de Fechar Menu --- */
+#button-menu-toggle[close] .svg-list {
+  display: none;
+}
+
+#button-menu-toggle[close] .svg-x-lg {
+  display: block;
+}
+
+#header-top-bar:has(#button-menu-toggle[close]) .div-top-bar-collapsible {
+  display: flex;
+}
+
+/* ----- Botão Tema ----- */
+#button-tema {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: var(--bg-color-4);
+  border: none;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+#button-tema svg {
+  fill: var(--bg-color-1);
+  width: 100%;
+  height: 100%;
+}
+
+button:hover svg {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+/* ----- Animações ----- */
+/* --- Menu recolhido (padrão) --- */
+#header-top-bar .div-top-bar-collapsible {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+/* --- Quando o menu está aberto --- */
+#header-top-bar.menu-open .div-top-bar-collapsible {
+  max-height: 300px; /* ajuste conforme o conteúdo */
+  opacity: 1;
+}
+
+#header-top-bar.menu-open .div-top-bar-collapsible {
+  padding-bottom: 1rem;
+}
+
+/* --- Ícones do botão --- */
+#button-menu-toggle .svg-x-lg {
+  display: none;
+}
+
+#header-top-bar.menu-open #button-menu-toggle .svg-list {
+  display: none;
+}
+
+#header-top-bar.menu-open #button-menu-toggle .svg-x-lg {
+  display: block;
+}
+
+/* --- Transição dos itens internos (opcional, mais bonito) --- */
+.div-top-bar-collapsible li {
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+#header-top-bar.menu-open .div-top-bar-collapsible li {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.a-learn-more {
+  font-size: 1.2rem;
+}
+
+/* ----- Rodapé ----- */
+footer {
+  background-color: var(--bg-color-2);
+  color: var(--bg-color-5);
+  padding: 40px 20px;
+  font-family: "Poppins", sans-serif;
+  border-top: 1px solid var(--bg-color-6);
+}
+
+.div-footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.div-footer-container div {
+  flex: 1;
+  min-width: 220px;
+}
+
+.div-footer-about h3 {
+  font-size: 1.5em;
+  color: var(--accent-color-4);
+  margin-bottom: 10px;
+}
+
+.div-footer-links h4,
+.div-footer-contact h4 {
+  color: var(--accent-color-3);
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+.div-footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.div-footer-links a {
+  color: var(--bg-color-4);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.div-footer-links a:hover {
+  color: var(--accent-color-4);
+}
+
+.div-footer-contact a {
+  color: var(--accent-color-4);
+  text-decoration: none;
+}
+
+.div-footer-contact a:hover {
+  color: var(--accent-color-3);
+}
+
+.div-footer-bottom {
+  text-align: center;
+  border-top: 1px solid var(--bg-color-3);
+  margin-top: 30px;
+  padding-top: 15px;
+  font-size: 0.9em;
+  color: var(--bg-color-5);
+}
