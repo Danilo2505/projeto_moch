@@ -1,7 +1,8 @@
-:: python -m venv venv
 @echo off
+:: python -m venv .venv
+
 REM Change to the directory containing your virtual environment's Scripts folder
-cd venv\Scripts
+cd .venv\Scripts
 
 REM Activate the virtual environment
 call activate.bat
